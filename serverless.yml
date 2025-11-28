@@ -1,0 +1,27 @@
+service: orchestrator-engine-lambda
+frameworkVersion: "4"
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: us-east-1
+  memorySize: 256
+  timeout: 15
+  environment:
+    OPENAI_API_KEY: ${env:OPENAI_API_KEY}
+    OE_OPENAI_MODEL: gpt-4o-mini
+ 
+package:
+  individually: false
+  patterns:
+    - dist/**
+    - node_modules/**
+    - package.json
+
+functions:
+  runEngine:
+    handler: dist/handler.run
+    events:
+      - httpApi:
+          path: /run
+          method: post
