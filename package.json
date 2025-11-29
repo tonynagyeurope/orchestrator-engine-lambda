@@ -17,6 +17,6 @@
     "typescript": "^5.4.0"
   },
   "dependencies": {
-    "orchestrator-engine": "file:../orchestrator-engine/orchestrator-engine-1.0.7.tgz"
+    "orchestrator-engine": "file:../orchestrator-engine/orchestrator-engine-1.0.11.tgz"
   }
 }
